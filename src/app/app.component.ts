@@ -1,18 +1,24 @@
+//Imports do Angular
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+
+//Imports do projeto
 import { ContainerComponent } from './componentes/container/container.component';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatoComponent } from './componentes/contato/contato.component';
+
+//Imports Json
+import agenda from './agenda.json';
+
 
 interface Contato{
   id: number
   nome: string
   telefone: string
 }
-
-import agenda from './agenda.json';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +29,8 @@ import agenda from './agenda.json';
       ContainerComponent, 
       CabecalhoComponent,
       SeparadorComponent,
-      ContatoComponent],
+      ContatoComponent,
+      FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -31,12 +38,30 @@ export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
   contatos: Contato[] = agenda;
 
-  /*
-    Transformando todas as letras em minúscula, por que a função poderá ignorar contatos cujos nomes comecem com a letra em caixa diferente.
-  */
-  filtrarContatosPorLetraInicial(letra: string) : Contato[]{
+  filtroPorTexto: string = '';
+
+  filtrarContatosPorTexto(): Contato[]{
+    if(!this.filtroPorTexto){
+      return this.contatos;
+    }
     return this.contatos.filter(contato => {
-      return contato.nome.toLocaleLowerCase().startsWith(letra)
+      return this.removerAcentos(contato.nome)
+              .toLocaleLowerCase()
+              .includes(
+                this.removerAcentos(this.filtroPorTexto).toLowerCase()
+              )
+    })
+  }
+
+  filtrarContatosPorLetraInicial(letra: string) : Contato[]{
+    return this.filtrarContatosPorTexto().filter(contato => {
+      //Compara a letra inicial sem considerar acentuações
+      return this.removerAcentos(contato.nome).toLowerCase().startsWith(letra)
     });
+  }
+
+  //Removendo os acentos das palavras
+  private removerAcentos(texto: string) : string{
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
   }
 }
