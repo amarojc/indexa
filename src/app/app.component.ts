@@ -30,4 +30,13 @@ import agenda from './agenda.json';
 export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
   contatos: Contato[] = agenda;
+
+  /*
+    Transformando todas as letras em minúscula, por que a função poderá ignorar contatos cujos nomes comecem com a letra em caixa diferente.
+  */
+  filtrarContatosPorLetraInicial(letra: string) : Contato[]{
+    return this.contatos.filter(contato => {
+      return contato.nome.toLocaleLowerCase().startsWith(letra)
+    });
+  }
 }
