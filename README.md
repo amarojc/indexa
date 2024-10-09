@@ -1,27 +1,79 @@
-# Indexa
+# Indexa (Agenda de contatos)
+### Indexa é um projeto de estudo desenvolvido no curso de formação Angular, na plataforma Alura, com o professor Vinícius Neves.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
 
-## Development server
+### Layout web
+![Tela](https://github.com/amarojc/indexa/blob/main/src/assets/indexa.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+<br><br>
+## Tópicos abordados no Curso
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ **Criando a aplicação**
+- Instalando o Angular CLI e os comandos new e generate;
+- Entendendo o hot reload;
+- Aplicando estilos globais;
+- Criando e importando componentes;
+- Interpretando mensagens de erros conhecidos pelo Angular;
+- Angular e suas versões
 
-## Build
+**Estruturando a Agenda**
+- Montando e aplicando os estilos no container e no cabeçalho;
+- Estilização de componentes;
+- Controle de fluxo;
+- Importando fontes no Angular;
+- Iterando utilizando o @for;
+- Uso do ng-content para renderizar elementos filhos;
+- Mostrando imagens estáticas da pastas assets;
+- Importando fontes globalmente.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Lendo contatos do JSON**
+- binding de valores da instância do componente com o template;
+- Envio de valores para componentes;
+- Lidando com valores recebidos utilizando o @Input.
 
-## Running unit tests
+**Filtrando por texto**
+- Importando e lendo arquivos .json
+- Criando propriedades de classe, fortemente tipadas;
+- Passando @Input com valores dinâmicos para os componentes.
+- Filtrando contatos;
+- Exibindo os contatos por letra
+- Abordagem de outras diretivas como o *ngFor
+- O impacto do case-sensitive
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+**Build e deploy**
+- Implementação do Input e NgModel;
+- O que é o [(ngModel)];
+- Combinando os filtros;
+- Estilizando o input
+- Filtrando palavras com acentos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<br>
+## Tecnologias utilizadas
 
-## Further help
+- Node: v20.17.0
+- Angular CLI 17.0.3
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Executando o projeto
+
+1 - Realize o download ou o clone do projeto <br>
+2 - Descompacte o projeto<br>
+3 - Abra o projeto  via prompt (cmd) ou pelo seu editor de códigos.<br>
+
+* Execute o comando abaixo para realizar o download das dependências do projeto.
+
+```
+npm install
+```
+
+4 - Ainda pelo terminal, execute o comando abaixo para iniciar o projeto.<br>
+
+```
+ng serve
+```
+
+Caso tudo ocorra bem...<br>
+Acesse: **http://localhost:4200/**<br>
+
+
