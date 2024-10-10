@@ -9,6 +9,7 @@ import { ContainerComponent } from './componentes/container/container.component'
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatoComponent } from './componentes/contato/contato.component';
+import { FormularioContatoComponent } from './paginas/formulario-contato/formulario-contato.component';
 
 //Imports Json
 import agenda from './agenda.json';
@@ -26,11 +27,13 @@ interface Contato{
   imports: [
       CommonModule, 
       RouterOutlet, 
+      FormsModule,
       ContainerComponent, 
       CabecalhoComponent,
       SeparadorComponent,
       ContatoComponent,
-      FormsModule],
+      FormularioContatoComponent
+     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

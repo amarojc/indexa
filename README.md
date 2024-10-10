@@ -3,7 +3,13 @@
 
 
 ### Layout web
-![Tela](https://github.com/amarojc/indexa/blob/main/src/assets/indexa.png)
+**Formulário de Contato**
+
+![Formulário de contato](https://github.com/amarojc/indexa/blob/main/src/assets/formulario-contato.png)
+
+**Contatos**
+
+![Contatos](https://github.com/amarojc/indexa/blob/main/src/assets/indexa.png)
 
 
 <br><br>
@@ -75,5 +81,3 @@ ng serve
 
 Caso tudo ocorra bem...<br>
 Acesse: **http://localhost:4200/**<br>
-
-
